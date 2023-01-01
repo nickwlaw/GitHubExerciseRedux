@@ -169,7 +169,8 @@ public class Console {
 			if (matchesAffirmative) {
 				isValid = true;
 			} else if (matchesNegative) {
-				isValid = true;
+				printEmptyLine();
+				break;
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
