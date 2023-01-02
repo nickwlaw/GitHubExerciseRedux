@@ -156,6 +156,7 @@ public class Console {
 	public static boolean promptToContinue() {
 		
 		boolean isValid = false;
+		boolean continueAffirmative = true;
 		
 		while (!isValid) {
 			print(PROMPT_CONTINUE);
@@ -170,11 +171,12 @@ public class Console {
 				isValid = true;
 			} else if (matchesNegative) {
 				isValid = true;
+				continueAffirmative = false;
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
 		}
 		
-		return isValid;
+		return continueAffirmative;
 	}
 }
