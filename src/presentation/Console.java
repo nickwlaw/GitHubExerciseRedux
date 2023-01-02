@@ -156,9 +156,11 @@ public class Console {
 	public static boolean promptToContinue() {
 		
 		boolean isValid = false;
+		boolean wantsToPlayAgain = true;
 		
 		while (!isValid) {
 			print(PROMPT_CONTINUE);
+			
 			
 			String choice = scanner.next();
 			Matcher affirmativeMatcher = OPTION_AFFIRMATIVE.matcher(choice);
@@ -168,14 +170,16 @@ public class Console {
 
 			if (matchesAffirmative) {
 				isValid = true;
+				wantsToPlayAgain = true;
 			} else if (matchesNegative) {
-				printEmptyLine();
+				isValid = false;
+				wantsToPlayAgain = false;
 				break;
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
 		}
 		
-		return isValid;
+		return wantsToPlayAgain;
 	}
 }
