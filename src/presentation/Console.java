@@ -172,9 +172,8 @@ public class Console {
 				isValid = true;
 				wantsToPlayAgain = true;
 			} else if (matchesNegative) {
-				isValid = false;
+				isValid = true;
 				wantsToPlayAgain = false;
-				break;
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
