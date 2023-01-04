@@ -50,6 +50,7 @@ public class GitHubExercise {
 			Console.println("My favorite food is " + favoriteFood);
 
 			shouldContinue = Console.promptToContinue();
+			Console.printEmptyLine();
 		}
 		
 		Console.println("See ya!");
